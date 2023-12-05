@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';  // Import map and catchError
 import { Weather } from '../interfaces/weather';
 
 @Injectable({
@@ -9,39 +7,44 @@ import { Weather } from '../interfaces/weather';
 })
 export class WeatherService {
 
-  private apiKey = 'd3aae32fea1193504888da921fe7538b';
-
   constructor(private http: HttpClient) { }
 
-  getWeather(location: string | number): Observable<Weather> {
-    const apiUrl = this.buildWeatherUrl(location);
-    return this.http.get<Weather>(apiUrl);
-  }
+  getWeather(location: string | number) {
+    let apiUrl;
+    let latLong;
 
-  private buildWeatherUrl(location: string | number): string {
     if (typeof location === 'string' && /^\d+$/.test(location)) {
-      return `https://api.openweathermap.org/data/2.5/weather?zip=${location},US&APPID=${this.apiKey}&units=imperial`;
+      latLong = 'http://api.openweathermap.org/geo/1.0/zip?zip=' + location + '&appid=d3aae32fea1193504888da921fe7538b&units=imperial'
+      apiUrl = 'https://api.openweathermap.org/data/2.5/weather?zip=' + location + ',US&APPID=d3aae32fea1193504888da921fe7538b&units=imperial';
     } else if (typeof location === 'string' && location.includes(',')) {
-      return `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${this.apiKey}&units=imperial`;
+      latLong = 'http://api.openweathermap.org/geo/1.0/direct?q=' + location + ',us&appid=d3aae32fea1193504888da921fe7538b&units=imperial';
+      apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + location + ',US&appid=d3aae32fea1193504888da921fe7538b&units=imperial';
     } else if (typeof location === 'string') {
-      return `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${this.apiKey}&units=imperial`;
+      apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=d3aae32fea1193504888da921fe7538b&units=imperial';
     } else {
       throw new Error('Invalid location type');
     }
+    if (latLong){
+      this.getForcast(latLong);
+    };
+    return this.http.get(apiUrl);
   }
 
-  getForecast(location: string | number): Observable<string> {
-    const apiUrl = this.buildWeatherUrl(location);
+  getForcast(url: string) {
+    let apiUrl;
 
-    return this.http.get<Weather>(apiUrl).pipe(
-      map((response: Weather) => {
+    this.http.get<Weather>(url).subscribe(
+      (response) => {
         const { lat, lon } = response;
-        return `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${this.apiKey}&units=imperial`;
-      }),
-      catchError((error: any) => {
+        console.log('Latitude:', lat);
+        console.log('Longitude:', lon);
+        apiUrl = 'api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=d3aae32fea1193504888da921fe7538b&units=imperial';
+        console.log(apiUrl);
+      },
+      (error) => {
         console.error('Error fetching forecast data:', error);
-        throw error;
-      })
+      }
     );
   }
+
 }
