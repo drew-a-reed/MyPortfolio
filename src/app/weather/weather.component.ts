@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { WeatherService } from "../weather.service";
+import { WeatherService } from "./services/weather.service";
 
 @Component({
   selector: 'app-weather',
@@ -25,7 +25,7 @@ export class WeatherComponent implements OnInit {
     this.weatherService
       .getWeather(formValues.location)
       .subscribe(data => {
-        console.log(data); // Log the received data
+        console.log(data);
         this.weatherData = data;
       });
   }

@@ -7,7 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { WeatherComponent } from './weather/weather.component';
 import { HttpClientModule } from '@angular/common/http';
-import { WeatherService } from "./weather.service";
+import { WeatherService } from "./weather/services/weather.service";
 
 @NgModule({
   declarations: [
