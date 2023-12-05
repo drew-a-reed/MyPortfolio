@@ -1,0 +1,39 @@
+.main {
+  height: 100vh;
+  background-image: url("../../assets/images/code.jpg");
+  text-align: center;
+  text-transform: uppercase;
+
+  &__intro {
+    padding: 0 clamp(10%, 20%, 30%);
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 400px 200px rgba(0,0,0,0.8);
+
+    &--name,
+    &--title,
+    &--bio {
+      color: rgba(0, 255, 211, 1);
+    }
+
+    &--name {
+      font-size: clamp(3rem, 5vw, 5rem);
+    }
+
+    &--title {
+      font-size: clamp(1rem, 1.5vw, 1.5rem);
+    }
+
+    &--bio {
+      font-size: clamp(0.875rem, 1.125vw, 1.125rem);
+    }
+  }
+
+  &__projects {
+    margin-top: 5rem;
+
+    &__title{
+      font-size: clamp(1rem, 1.5vw, 1.5rem);
+      color: rgba(0, 255, 211, 1);
+    }
+  }
+}
