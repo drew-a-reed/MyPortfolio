@@ -5,16 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { WeatherComponent } from './weather/weather.component';
 import { HttpClientModule } from '@angular/common/http';
-import { WeatherService } from "./weather/services/weather.service";
+import { TodayComponent } from './today/today.component';
+import { FutureComponent } from './future/future.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomepageComponent,
-    WeatherComponent,
+    TodayComponent,
+    FutureComponent
     ],
   imports: [
     BrowserModule,
@@ -22,7 +23,7 @@ import { WeatherService } from "./weather/services/weather.service";
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [WeatherService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
