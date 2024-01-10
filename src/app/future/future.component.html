@@ -1,1 +1,15 @@
-<p>future works!</p>
+<div class="primary">
+  <h3>5-Day Forecast</h3>
+  <ul>
+    <li class="main" *ngFor="let day of weatherData">
+      {{ day.dt_txt | date:'EEE, MMM dd' }}
+      <img src="assets/icons/{{day.weather[0].icon}}.png" alt="" class="icon">
+      <span>
+        {{ day.main.temp_min | number: '1.0-0' }}&deg;F/
+        {{ day.main.temp_max | number: '1.0-0' }}&deg;F
+      </span>
+      <span>{{ day.weather[0].main }}</span>
+      <i class="fa fa-caret-down" aria-hidden="true"></i>
+    </li>
+  </ul>
+</div>
