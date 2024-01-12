@@ -1,30 +1,80 @@
 .main {
-  height: 100vh;
-  background-image: url("../../assets/images/code.jpg");
   text-align: center;
   text-transform: uppercase;
+  padding-top: 5%;
 
   &__intro {
-    padding: 0 clamp(10%, 20%, 30%);
-    background: rgba(0, 0, 0, 0.8);
-    box-shadow: 0px 0px 400px 200px rgba(0,0,0,0.8);
+    padding: 0 clamp(5%, 10%, 15%);
 
     &--name,
     &--title,
     &--bio {
-      color: rgba(0, 255, 211, 1);
+
     }
 
     &--name {
-      font-size: clamp(3rem, 5vw, 5rem);
+      color: #fff;
+      font-size: clamp(2rem, 4vw, 4rem);
+
+      span {
+        color: rgba(204,51,81,0.75);
+      }
     }
 
     &--title {
+      color: #fff;
       font-size: clamp(1rem, 1.5vw, 1.5rem);
+
+      span {
+        color: rgba(204,51,81,0.5);
+      }
     }
 
     &--bio {
       font-size: clamp(0.875rem, 1.125vw, 1.125rem);
+      display: flex;
+      flex-wrap: wrap;
+
+      &-paragraph {
+        margin-top: 5rem;
+        color: #fff;
+        max-width: 50%;
+        flex-grow: 1;
+        text-align: left;
+      }
+
+      &-languages {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7.5rem;
+        margin-top: 5rem;
+        max-width: 50%;
+        justify-content: center;
+        flex-grow: 1;
+
+        img {
+          width: 7.5rem;
+          height: 7.5rem;
+        }
+      }
+    }
+
+    h2 {
+      color: #fff;
+    }
+
+    h2:before {
+      position: absolute;
+      content: '';
+      border-bottom: 18px solid;
+      border-color: rgba(204,51,81,0.75);;
+      width: 6rem;
+      display: block;
+      margin: 0 auto;
+      position: relative;
+      left: 3.5rem;
+      top: 2.3rem;
+      z-index: 0;
     }
   }
 
@@ -33,7 +83,12 @@
 
     &__title{
       font-size: clamp(1rem, 1.5vw, 1.5rem);
-      color: rgba(0, 255, 211, 1);
+
     }
+  }
+
+  hr {
+    color: rgba(204,51,81,0.95);
+    margin-top: 50vh;
   }
 }
