@@ -8,11 +8,16 @@
   position: sticky;
   top: 0;
 
-  &__welcome {
+  &__links {
     color: white;
     font-size: 1.5rem;
     text-transform: uppercase;
     margin-left: 1rem;
+
+    a {
+      text-decoration: none;
+      margin-left: 0.5rem;
+    }
   }
 
   &__icons {

@@ -6,68 +6,15 @@
   &__intro {
     padding: 0 clamp(5%, 10%, 15%);
 
-    &--name,
-    &--title,
-    &--bio {
-
-    }
-
-    &--name {
-      color: #fff;
-      font-size: clamp(2rem, 4vw, 4rem);
-
-      span {
-        color: rgba(204,51,81,0.75);
-      }
-    }
-
-    &--title {
-      color: #fff;
-      font-size: clamp(1rem, 1.5vw, 1.5rem);
-
-      span {
-        color: rgba(204,51,81,0.5);
-      }
-    }
-
-    &--bio {
-      font-size: clamp(0.875rem, 1.125vw, 1.125rem);
-      display: flex;
-      flex-wrap: wrap;
-
-      &-paragraph {
-        margin-top: 5rem;
-        color: #fff;
-        max-width: 50%;
-        flex-grow: 1;
-        text-align: left;
-      }
-
-      &-languages {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 7.5rem;
-        margin-top: 5rem;
-        max-width: 50%;
-        justify-content: center;
-        flex-grow: 1;
-
-        img {
-          width: 7.5rem;
-          height: 7.5rem;
-        }
-      }
-    }
-
     h2 {
       color: #fff;
     }
 
     h2:before {
       position: absolute;
-      content: '';
+      content: "";
       border-bottom: 18px solid;
-      border-color: rgba(204,51,81,0.75);;
+      border-color: rgba(204, 51, 81, 0.75);
       width: 6rem;
       display: block;
       margin: 0 auto;
@@ -76,19 +23,100 @@
       top: 2.3rem;
       z-index: 0;
     }
+
+    &--main {
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &--name {
+      color: #fff;
+      font-size: clamp(2rem, 4vw, 4rem);
+
+      span {
+        color: rgba(204, 51, 81, 0.75);
+      }
+    }
+
+    &--title {
+      color: #fff;
+      font-size: clamp(1rem, 1.5vw, 1.5rem);
+
+      span {
+        color: rgba(204, 51, 81, 0.5);
+      }
+    }
+
+    &--about {
+      font-size: clamp(0.875rem, 1.125vw, 1.125rem);
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      color: #fff;
+      flex-grow: 1;
+      justify-content: center;
+      text-align: left;
+
+      h2:before {
+        left: 2rem;
+        width: 4rem;
+      }
+    }
+
+    &--technologies {
+      display: flex;
+      flex-direction: column;
+      margin-top: 2rem;
+      color: #fff;
+
+      h2:before {
+        width: 9rem;
+        left: 4.5rem;
+      }
+
+      h3 {
+        padding-top: 1rem;
+      }
+
+      &-professional {
+        padding: 0 clamp(5%, 10%, 15%);
+        display: flex;
+        gap: 5rem;
+        justify-content: space-around;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+
+        span {
+          svg {
+            fill: rgba(204, 51, 81, 0.5);
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+          }
+
+          svg:hover {
+            color: rgba(204, 51, 81, 1);
+            box-shadow: 0 0 5px rgba(204, 51, 81, 1);
+            text-shadow: 0 0 5px rgba(204, 51, 81, 1);
+            fill: rgba(204, 51, 81, 1);
+            transition: .5s;
+          }
+        }
+
+      }
+    }
   }
 
   &__projects {
     margin-top: 5rem;
 
-    &__title{
+    &__title {
       font-size: clamp(1rem, 1.5vw, 1.5rem);
-
     }
   }
 
   hr {
-    color: rgba(204,51,81,0.95);
-    margin-top: 50vh;
+    color: rgba(204, 51, 81, 0.95);
   }
 }
