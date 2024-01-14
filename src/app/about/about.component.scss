@@ -1,0 +1,14 @@
+.about {
+  font-size: clamp(0.875rem, 1.125vw, 1.125rem);
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  flex-grow: 1;
+  justify-content: center;
+  text-align: left;
+
+  h2:before {
+    left: 2rem;
+    width: 4rem;
+  }
+}

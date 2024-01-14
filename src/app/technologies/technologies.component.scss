@@ -1,0 +1,46 @@
+.technologies {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+
+  h2:before {
+    width: 9rem;
+    left: 4.5rem;
+  }
+
+  h3 {
+    padding-top: 1rem;
+  }
+
+  span {
+    svg {
+      fill: rgba(204, 51, 81, 0.5);
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+    }
+
+    svg:hover {
+      color: rgba(204, 51, 81, 1);
+      box-shadow: 0 0 5px rgba(204, 51, 81, 1);
+      text-shadow: 0 0 5px rgba(204, 51, 81, 1);
+      fill: rgba(204, 51, 81, 1);
+      transform: scale(1.2);
+      transition: transform 0.5s ease;
+    }
+  }
+
+  &-professional,
+  &-educational {
+    padding: 0 clamp(5%, 10%, 15%);
+    display: flex;
+    gap: 5rem;
+    justify-content: space-around;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+
+    span {
+      color: white;
+    }
+  }
+}

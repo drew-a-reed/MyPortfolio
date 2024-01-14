@@ -18,6 +18,12 @@
       text-decoration: none;
       margin-left: 0.5rem;
     }
+
+    a:not(:last-child):after {
+      content: "|";
+      margin-left: 5px;
+      color: white;
+    }
   }
 
   &__icons {

@@ -2,108 +2,41 @@
   text-align: center;
   text-transform: uppercase;
   padding-top: 5%;
+  color: #fff;
+  padding: 0 clamp(5%, 10%, 15%);
 
-  &__intro {
-    padding: 0 clamp(5%, 10%, 15%);
+  &--main {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-    h2 {
-      color: #fff;
+  &--name {
+    font-size: clamp(2rem, 4vw, 4rem);
+  }
+
+  &--title,
+  &--resume {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+
+    span {
+      color: rgba(204, 51, 81, 0.5);
     }
 
-    h2:before {
-      position: absolute;
-      content: "";
-      border-bottom: 18px solid;
-      border-color: rgba(204, 51, 81, 0.75);
-      width: 6rem;
-      display: block;
-      margin: 0 auto;
-      position: relative;
-      left: 3.5rem;
-      top: 2.3rem;
-      z-index: 0;
+    a {
+      text-decoration: none;
+      color: white;
+      border-bottom: 1px solid;
+      border-color: rgba(204, 51, 81, 0.5);
     }
 
-    &--main {
-      height: 50vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    &--name {
-      color: #fff;
-      font-size: clamp(2rem, 4vw, 4rem);
+    a:hover {
+      color: rgba(204, 51, 81, 0.5);
+      border-color: white;
 
       span {
-        color: rgba(204, 51, 81, 0.75);
-      }
-    }
-
-    &--title {
-      color: #fff;
-      font-size: clamp(1rem, 1.5vw, 1.5rem);
-
-      span {
-        color: rgba(204, 51, 81, 0.5);
-      }
-    }
-
-    &--about {
-      font-size: clamp(0.875rem, 1.125vw, 1.125rem);
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: 2rem;
-      color: #fff;
-      flex-grow: 1;
-      justify-content: center;
-      text-align: left;
-
-      h2:before {
-        left: 2rem;
-        width: 4rem;
-      }
-    }
-
-    &--technologies {
-      display: flex;
-      flex-direction: column;
-      margin-top: 2rem;
-      color: #fff;
-
-      h2:before {
-        width: 9rem;
-        left: 4.5rem;
-      }
-
-      h3 {
-        padding-top: 1rem;
-      }
-
-      &-professional {
-        padding: 0 clamp(5%, 10%, 15%);
-        display: flex;
-        gap: 5rem;
-        justify-content: space-around;
-        margin-top: 2rem;
-        flex-wrap: wrap;
-
-        span {
-          svg {
-            fill: rgba(204, 51, 81, 0.5);
-            margin-bottom: 0.5rem;
-            padding: 0.5rem;
-          }
-
-          svg:hover {
-            color: rgba(204, 51, 81, 1);
-            box-shadow: 0 0 5px rgba(204, 51, 81, 1);
-            text-shadow: 0 0 5px rgba(204, 51, 81, 1);
-            fill: rgba(204, 51, 81, 1);
-            transition: .5s;
-          }
-        }
-
+        color: white;
       }
     }
   }

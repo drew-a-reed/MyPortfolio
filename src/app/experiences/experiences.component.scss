@@ -1,0 +1,25 @@
+.experiences {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+
+  h2:before {
+    width: 9rem;
+    left: 4.5rem;
+  }
+
+  &__education,
+  &__work {
+    max-width: 45%;
+
+    &-job,
+    &-school {
+      border-bottom: 1px solid;
+      border-color: rgba(204, 51, 81, 0.5);
+    }
+  }
+
+  li {
+    font-size: 0.85rem;
+  }
+}
