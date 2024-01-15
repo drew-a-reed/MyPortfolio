@@ -1,7 +1,7 @@
 .contact {
 
   &-message {
-    max-width: 30%;
+    max-width: clamp(80%, 50%, 50%);
     margin: 2rem auto;
   }
 
