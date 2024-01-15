@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  toggleMenu() {
+    const menu = document.querySelector('.header__links-more');
+    const links = document.querySelectorAll('.header__links a')
+    menu?.classList.toggle("open");
+
+    links.forEach((link: any) => {
+      link.style.display = link.style.display === 'flex' ? 'none' : 'flex';
+    });
+  }
+
 }

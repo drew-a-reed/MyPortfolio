@@ -17,6 +17,7 @@
       fill: rgba(204, 51, 81, 0.5);
       margin-bottom: 0.5rem;
       padding: 0.5rem;
+      height: clamp(3.75rem, 4.25rem, 4.5rem);
     }
 
     svg:hover {
@@ -38,6 +39,10 @@
     margin-top: 2rem;
     flex-wrap: wrap;
     align-items: center;
+
+    @media (max-width: 670px) {
+      gap: 1rem;
+    }
 
     span {
       color: white;

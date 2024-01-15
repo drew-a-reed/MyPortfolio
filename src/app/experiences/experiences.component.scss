@@ -2,6 +2,8 @@
   text-align: left;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: clamp(0.875rem, 1.125vw, 1.125rem);
 
   h2:before {
     width: 9rem;
@@ -12,6 +14,10 @@
   &__work {
     max-width: 45%;
 
+    @media (max-width: 670px) {
+      max-width: 100%;
+    }
+
     &-job,
     &-school {
       border-bottom: 1px solid;
@@ -20,6 +26,6 @@
   }
 
   li {
-    font-size: 0.85rem;
+    font-size: clamp(0.875rem, 1.125vw, 1.125rem);
   }
 }
