@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
 import { TechnologiesComponent } from './technologies/technologies.component';
 import { ExperiencesComponent } from './experiences/experiences.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ExperiencesComponent } from './experiences/experiences.component';
     AboutComponent,
     TechnologiesComponent,
     ExperiencesComponent,
+    ContactComponent,
     ],
   imports: [
     BrowserModule,

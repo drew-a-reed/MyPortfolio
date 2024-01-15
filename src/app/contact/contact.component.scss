@@ -1,0 +1,32 @@
+.contact {
+
+  &-message {
+    max-width: 30%;
+    margin: 2rem auto;
+  }
+
+  &__input {
+
+    input,
+    textarea {
+      width: 20rem;
+      background-color: rgba(204, 51, 81, 0.25);
+      border: none;
+      padding: 0.25rem;
+    }
+
+    input {
+      margin-bottom: 1.5rem
+    }
+  }
+
+  button {
+    margin-top: 1.5rem;
+    padding: 0.25rem 0.75rem;
+    border-color: rgba(204, 51, 81, 0.5);
+
+    &:hover {
+      color: rgba(204, 51, 81, 0.75);
+    }
+  }
+}
