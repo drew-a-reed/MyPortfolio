@@ -5,11 +5,6 @@
   flex-wrap: wrap;
   font-size: clamp(0.875rem, 1.125vw, 1.125rem);
 
-  h2:before {
-    width: 9rem;
-    left: 4.5rem;
-  }
-
   &__education,
   &__work {
     max-width: 45%;
@@ -28,4 +23,9 @@
   li {
     font-size: clamp(0.875rem, 1.125vw, 1.125rem);
   }
+}
+
+h2:before {
+  width: 9rem;
+  left: 4.5rem;
 }

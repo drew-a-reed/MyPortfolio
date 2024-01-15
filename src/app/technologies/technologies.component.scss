@@ -3,11 +3,6 @@
   flex-direction: column;
   margin-top: 2rem;
 
-  h2:before {
-    width: 9rem;
-    left: 4.5rem;
-  }
-
   h3 {
     padding-top: 1rem;
   }
@@ -48,4 +43,9 @@
       color: white;
     }
   }
+}
+
+h2:before {
+  width: 9rem;
+  left: 4.5rem;
 }
