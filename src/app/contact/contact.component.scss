@@ -9,10 +9,11 @@
 
     input,
     textarea {
-      width: 20rem;
+      width: clamp(15rem, 20rem, 25rem);
       background-color: rgba(204, 51, 81, 0.25);
       border: none;
       padding: 0.25rem;
+      max-width: 100%;
     }
 
     input {
