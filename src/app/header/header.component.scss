@@ -10,7 +10,7 @@
 
   &__links {
     color: white;
-    text-transform: uppercase;
+    text-transform: capitalize;
     margin-left: 1rem;
 
     @media (max-width: 670px) {
@@ -48,6 +48,7 @@
       text-decoration: none;
       margin-left: 0.5rem;
       font-size: clamp(0.75rem, 1.25rem, 1.5rem);
+      text-transform: uppercase;
 
       &:not(:last-child):after {
         content: "|";
@@ -66,6 +67,7 @@
   }
 
   &__icons {
+    margin-right: 1rem;
     a {
       margin-right: 0.5rem;
     }
