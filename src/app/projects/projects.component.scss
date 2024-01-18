@@ -1,34 +1,49 @@
 .projects {
   margin-bottom: 10rem;
+  max-width: 100%;
+
   .project {
     margin-top: 1.5rem;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
     img {
       box-shadow: 0px 0 0 rgba(204, 51, 81, 0.5),
-        5rem 0 0 rgba(204, 51, 81, 0.5), 0 -0.5rem 0 rgba(204, 51, 81, 0.5);
-      max-height: 600px;
+        clamp(2rem, 3vw, 5rem) 0 0 rgba(204, 51, 81, 0.5), 0 -0.5rem 0 rgba(204, 51, 81, 0.5);
+      max-width: 100%;
+    }
+
+    @media (max-width: 780px) {
+      grid-template-columns: 1fr;
+
+      &__text {
+        justify-self: center;
+      }
     }
 
     &__text {
       background-color: transparent;
       text-align: left;
+      max-width: 30rem;
 
       * {
         background-color: transparent;
       }
 
       &-title {
-        font-size: clamp(2rem, 4rem, 5rem);
+        font-size: clamp(2rem, 3vw, 5rem);
       }
+
       &-about {
-        font-size: clamp(1.25rem, 1.75rem, 4rem);
+        font-size: clamp(1.25rem, 1.5vw, 4rem);
         margin-top: 0.5rem;
         margin-bottom: 1rem;
+        max-width: 100%;
       }
+
       &-link {
         a {
-          font-size: clamp(1.25rem, 1.75rem, 4rem);
+          font-size: clamp(1.25rem, 1.75vw, 4rem);
           color: #fff;
           text-decoration: none;
           padding-bottom: 0.5rem;

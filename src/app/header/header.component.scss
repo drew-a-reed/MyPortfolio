@@ -14,7 +14,7 @@
     // text-transform: capitalize;
     margin-left: 1rem;
 
-    @media (max-width: 670px) {
+    @media (max-width: 780px) {
       flex-direction: column;
       align-items: flex-start;
 
@@ -48,7 +48,7 @@
     a {
       text-decoration: none;
       margin-left: 0.5rem;
-      font-size: clamp(0.75rem, 1.25rem, 1.5rem);
+      font-size: clamp(0.75rem, 1.25vw, 1.5rem);
       text-transform: uppercase;
 
       &:not(:last-child):after {
@@ -56,12 +56,12 @@
         margin-left: 5px;
         color: white;
 
-        @media (max-width: 670px) {
+        @media (max-width: 780px) {
           content: "";
         }
       }
 
-      @media (max-width: 670px) {
+      @media (max-width: 780px) {
         display: none;
       }
     }
