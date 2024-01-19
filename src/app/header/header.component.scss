@@ -11,7 +11,6 @@
 
   &__links {
     color: white;
-    // text-transform: capitalize;
     margin-left: 1rem;
 
     @media (max-width: 780px) {
@@ -48,7 +47,7 @@
     a {
       text-decoration: none;
       margin-left: 0.5rem;
-      font-size: clamp(0.75rem, 1.25vw, 1.5rem);
+      font-size: clamp(1rem, 1.25vw, 1.5rem);
       text-transform: uppercase;
 
       &:not(:last-child):after {
@@ -62,6 +61,7 @@
       }
 
       @media (max-width: 780px) {
+        font-size: clamp(1.5rem, 2.75vw, 2rem);
         display: none;
       }
     }
@@ -69,6 +69,12 @@
 
   &__icons {
     margin-right: 1rem;
+
+    @media (max-width: 780px) {
+      align-self: flex-start;
+      margin-top: 1.5rem;
+    }
+
     a {
       margin-right: 0.5rem;
     }
