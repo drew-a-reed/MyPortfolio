@@ -1,49 +1,18 @@
 .technologies {
-  display: flex;
-  flex-direction: column;
   margin: 2rem 0;
 
   h3 {
     margin-bottom: 1rem;
   }
 
-  span {
-    svg {
-      fill: rgba(204, 51, 81, 0.5);
-      margin-bottom: 0.5rem;
-      padding: 0.5rem;
-      height: clamp(3.75rem, 4.25rem, 4.5rem);
-    }
-
-    // svg:hover {
-    //   color: rgba(204, 51, 81, 1);
-    //   box-shadow: 0 0 5px rgba(204, 51, 81, 1);
-    //   text-shadow: 0 0 5px rgba(204, 51, 81, 1);
-    //   fill: rgba(204, 51, 81, 1);
-    //   transform: scale(1.2);
-    //   transition: transform 0.5s ease;
-    // }
-  }
-
-  &-professional,
-  &-educational {
-    padding: 0 clamp(5%, 10%, 15%);
+  ul {
+    justify-content: center;
     display: flex;
-    gap: 5rem;
-    justify-content: space-around;
     flex-wrap: wrap;
-    align-items: center;
-
-    @media (max-width: 670px) {
-      gap: 1rem;
-
-      span {
-        width: 40%
-      }
-    }
-
-    span {
-      color: white;
-    }
+    gap: 0.5rem 2rem;
+    list-style-type: circle;
+    max-width: 75%;
+    margin: auto;
   }
+
 }
