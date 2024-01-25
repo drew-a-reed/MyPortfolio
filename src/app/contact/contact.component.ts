@@ -25,35 +25,30 @@ export class ContactComponent implements OnInit {
       senderEmail: email,
       message: message
     });
-
     const requestOptions = {
       method: "POST",
       body
     };
 
     fetch(endpoint, requestOptions)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Error in fetch: ${response.statusText}`);
-        }
-        return response.json();
-      })
-      .then((response) => {
-        console.log("Email sent successfully!");
-        alert("Your message was sent. I will get back to you as soon as I can");
-      })
-      .catch((error) => {
-        console.error("An unknown error occurred:", error.message);
-        // Optionally, display an error message to the user
-      });
+    .then((response) => {
+      if (!response.ok) throw new Error("Error in fetch");
+      return response.json();
+    })
+    .then((response) => {
+      console.log("Email sent successfully!");
+      alert("Your message was sent. I will get back to you as soon as I can")
+    })
+    .catch((error) => {
+      console.log("An unkown error occured.");
+    });
   }
-
 
   private buildForm(): void {
     this.form = this.formBuilder.group({
-      name: [null],
-      email: [null],
-      message: [null],
+      name: this.formBuilder.control(null),
+      email: this.formBuilder.control(null),
+      message: this.formBuilder.control(null),
     });
   }
 
