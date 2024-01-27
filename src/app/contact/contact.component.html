@@ -3,16 +3,21 @@
   <div class="contact-message">
     Would you like to connect or just ask a question? Leave a message below, and I will get back to you as soon as possible.
   </div>
-  <form [formGroup]="form" (ngSubmit)="send()">
+  <form [formGroup]="form" (ngSubmit)="send()" novalidate>
     <div class="contact__input">
       <input formControlName="name" type="text" id="name" name="name" placeholder="Name*" autocomplete="name" required />
+      <div *ngIf="form.get('name')?.hasError('required') && form.get('name')?.touched" class="error-message">Name is required.</div>
     </div>
     <div class="contact__input">
       <input formControlName="email" type="email" id="email" name="email" placeholder="Email*" autocomplete="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required />
+      <div *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched" class="error-message">Email is required.</div>
+      <div *ngIf="form.get('email')?.hasError('pattern') && form.get('email')?.touched" class="error-message">Invalid email format.</div>
     </div>
     <div class="contact__input">
       <textarea formControlName="message" id="message" name="message" placeholder="Message*" autocomplete="off" required></textarea>
+      <div *ngIf="form.get('message')?.hasError('required') && form.get('message')?.touched" class="error-message">Message is required.</div>
     </div>
-    <button type="submit">Send</button>
+    <button type="submit" [disabled]="form.invalid">Send</button>
+    <div *ngIf="form.invalid && form.touched" class="error-message">Must fill out all required fields.</div>
   </form>
 </div>
